@@ -1,16 +1,18 @@
 # Smart Gate Automation using License Plate Recognition
 
 ## 📖 Overview
-This project implements an automated gate control system that identifies vehicles using license plate recognition. It uses **YOLOv8** for detection and **OCR** for text extraction, then verifies the result against a whitelist. Authorized vehicles trigger automatic gate access.
+This project implements a smart gate system that detects vehicle license plates using **YOLOv8**, extracts text via **OCR**, and processes access decisions. It supports **ESP32-based gate control**, a **web dashboard**, and optional **Blynk integration**.
 
 ---
 
-## 🚀 Key Features
-- Real-time license plate detection using YOLOv8  
-- Text extraction with EasyOCR or Tesseract  
-- Whitelist-based authorization  
-- Automated gate control via GPIO/relay  
-- Modular and extensible design  
+## 🚀 Features
+- Real-time license plate detection (YOLOv8)
+- OCR-based plate text extraction
+- Gate control via ESP32
+- Web dashboard for monitoring and control
+- Logging using CSV and SQLite
+- Optional IoT integration with Blynk
+- Multiple execution modes
 
 ---
 
@@ -19,23 +21,32 @@ This project implements an automated gate control system that identifies vehicle
 - YOLOv8 (Ultralytics)  
 - OpenCV  
 - EasyOCR / Tesseract  
-- GPIO / Relay modules  
+- Flask  
+- ESP32  
+- Blynk  
+- SQLite + CSV  
 
 ---
 
 ## 📂 Project Structure
 ```text
-smart-gate-automation/
-│── models/           # YOLOv8 model weights
-│── src/
-│   ├── main.py       # Entry point
-│   ├── detect.py     # Plate detection
-│   ├── ocr.py        # OCR processing
-│   ├── whitelist.py  # Authorization logic
-│   └── gate.py       # Gate control
-│── whitelist.json    # Authorized vehicles
-│── requirements.txt
-└── README.md
+.
+├── templates/
+│   ├── admin.html         # Admin panel UI
+│   ├── dashboard.html     # Dashboard interface
+│   ├── layout.html        # Shared layout
+│   └── login.html         # Login page
+├── .gitattributes
+├── IPforESP32.txt         # ESP32 IP address
+├── README.md
+├── access_log.db          # SQLite logs
+├── app.py                 # Flask backend
+├── main.py                # Main script (with video)
+├── main-novideofeed.py    # Run without video
+├── testwithblynk.py       # Blynk testing
+├── best.pt                # YOLOv8 model
+├── plate_log.csv          # Detection logs
+├── requirements.txt
 ```
 
 ---
@@ -47,49 +58,88 @@ cd Smart-Gate-Automation-Using-License-Plate-Recognition
 pip install -r requirements.txt
 ```
 
-Download YOLOv8 weights:
-```bash
-yolo download yolov8n.pt
-```
+Make sure `best.pt` is available.
 
 ---
 
 ## ▶️ Usage
+
+### Run detection system
 ```bash
-python src/main.py
+python main.py
 ```
 
-### Workflow
-1. Capture video frame  
-2. Detect license plate  
-3. Extract text (OCR)  
-4. Check whitelist  
-5. Open gate if authorized  
+### Run without video feed
+```bash
+python main-novideofeed.py
+```
+
+### Run web dashboard
+```bash
+python app.py
+```
+
+### Test Blynk
+```bash
+python testwithblynk.py
+```
 
 ---
 
-## 📋 Whitelist Example
-```json
-{
-  "authorized_vehicles": [
-    "BA1234",
-    "GA5678",
-    "LU9012"
-  ]
-}
-```
+## 🌐 Web Interface
+- `/login` → Login page  
+- `/dashboard` → Monitoring interface  
+- `/admin` → Admin controls  
+
+---
+
+## 🔄 Workflow
+1. Capture frame  
+2. Detect plate (YOLOv8)  
+3. Extract text (OCR)  
+4. Log result  
+5. Trigger ESP32 if authorized  
+6. Update dashboard / Blynk  
+
+---
+
+## 📡 ESP32 Setup
+- Store IP in `IPforESP32.txt`  
+- Ensure same network  
+- Configure relay for gate  
+
+---
+
+## 📊 Logging
+- `plate_log.csv` → raw detections  
+- `access_log.db` → structured logs  
 
 ---
 
 ## 🔒 Security
-- Keep whitelist protected  
-- Use encryption for remote systems  
-- Enable logging for audits  
+- Protect dashboard routes  
+- Restrict ESP32 access  
+- Validate requests  
+- Monitor logs  
 
 ---
 
 ## 🌱 Future Work
-- Cloud-based whitelist  
-- Mobile app integration  
-- Multi-camera support  
-- Real-time alerts  
+- Whitelist system  
+- API integration  
+- Cloud deployment  
+- Notifications  
+
+---
+
+## 📜 License
+MIT License  
+
+---
+
+## 👨‍💻 Author
+**Ayush Khanal**
+https://github.com/Ayushkhanal09
+
+**Nischal Bhandari**  
+https://github.com/Nis6hal
