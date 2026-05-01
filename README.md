@@ -138,9 +138,14 @@ MIT License
 ---
 
 ## 👨‍💻 Author
-**Ayush Khanal** 
+**Aaditya Baral**
+https://github.com/aadityabaral17
 
+**Ayush Khanal** 
 https://github.com/khanalayush
 
 **Nischal Bhandari**  
 https://github.com/Nis6hal
+
+**Samyog Sapkota**
+
