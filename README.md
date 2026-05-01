@@ -1,6 +1,5 @@
-Here’s a clean, GitHub-safe version you can paste directly:
+#Smart Gate Automation using License Plate Recognition
 
-Smart Gate Automation using License Plate Recognition
 📖 Overview
 
 This project implements an automated gate control system that identifies vehicles using license plate recognition. It uses YOLOv8 for detection and OCR for text extraction, then verifies the result against a whitelist. Authorized vehicles trigger automatic gate access.
