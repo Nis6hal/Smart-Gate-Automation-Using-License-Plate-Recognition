@@ -139,6 +139,7 @@ MIT License
 
 ## 👨‍💻 Author
 **Ayush Khanal** 
+
 https://github.com/khanalayush
 
 **Nischal Bhandari**  
