@@ -136,16 +136,15 @@ python testwithblynk.py
 MIT License  
 
 ---
+## 👨‍💻 Authors
+- **Aaditya Baral**  
+  https://github.com/aadityabaral17  
 
-## 👨‍💻 Author
-**Aaditya Baral**
-https://github.com/aadityabaral17
+- **Ayush Khanal**  
+  https://github.com/khanalayush  
 
-**Ayush Khanal** 
-https://github.com/khanalayush
+- **Nischal Bhandari**  
+  https://github.com/Nis6hal  
 
-**Nischal Bhandari**  
-https://github.com/Nis6hal
-
-**Samyog Sapkota**
+- **Samyog Sapkota**
 
