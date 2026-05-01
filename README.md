@@ -1,31 +1,33 @@
+Here’s a clean, GitHub-safe version you can paste directly:
+
 Smart Gate Automation using License Plate Recognition
 📖 Overview
 
-This project implements an automated gate control system that identifies vehicles using license plate recognition. It leverages YOLOv8 for real-time plate detection and OCR for text extraction, then validates the result against a predefined whitelist. Authorized vehicles trigger automatic gate access.
+This project implements an automated gate control system that identifies vehicles using license plate recognition. It uses YOLOv8 for detection and OCR for text extraction, then verifies the result against a whitelist. Authorized vehicles trigger automatic gate access.
 
 🚀 Key Features
 Real-time license plate detection using YOLOv8
-Accurate text extraction with EasyOCR or Tesseract
-Whitelist-based vehicle authorization
-Automated gate operation via GPIO/relay interface
-Modular architecture for scalability and customization
+Text extraction with EasyOCR or Tesseract
+Whitelist-based authorization
+Automated gate control via GPIO/relay
+Modular and extensible design
 🛠️ Tech Stack
 Python
 YOLOv8 (Ultralytics)
 OpenCV
 EasyOCR / Tesseract
-GPIO / Relay modules (hardware control)
+GPIO / Relay modules
 📂 Project Structure
 smart-gate-automation/
 │── models/           # YOLOv8 model weights
 │── src/
-│   ├── main.py       # Application entry point
-│   ├── detect.py     # License plate detection logic
+│   ├── main.py       # Entry point
+│   ├── detect.py     # Plate detection
 │   ├── ocr.py        # OCR processing
 │   ├── whitelist.py  # Authorization logic
-│   └── gate.py       # Gate control interface
-│── whitelist.json    # Authorized vehicle database
-│── requirements.txt  # Dependencies
+│   └── gate.py       # Gate control
+│── whitelist.json    # Authorized vehicles
+│── requirements.txt
 └── README.md
 ⚙️ Installation
 git clone https://github.com/<your-username>/Smart-Gate-Automation-Using-License-Plate-Recognition.git
@@ -37,13 +39,13 @@ Download YOLOv8 weights:
 yolo download yolov8n.pt
 ▶️ Usage
 python src/main.py
-System Workflow
+Workflow
 Capture video frame
-Detect license plate using YOLOv8
-Extract text via OCR
-Validate against whitelist
-Trigger gate opening if authorized
-📋 Whitelist Format
+Detect license plate
+Extract text (OCR)
+Check whitelist
+Open gate if authorized
+📋 Whitelist Example
 {
   "authorized_vehicles": [
     "BA1234",
@@ -51,20 +53,20 @@ Trigger gate opening if authorized
     "LU9012"
   ]
 }
-🔒 Security Considerations
-Protect and restrict access to the whitelist file
-Use encryption for any remote/cloud communication
-Maintain logs for monitoring and audit purposes
-🌱 Future Enhancements
-Cloud-based whitelist management
-Mobile app for remote access control
-Multi-camera support for larger deployments
-Real-time alerts and monitoring dashboard
+🔒 Security
+Keep whitelist protected
+Use encryption for remote systems
+Enable logging for audits
+🌱 Future Work
+Cloud-based whitelist
+Mobile app integration
+Multi-camera support
+Real-time alerts
 📜 License
 
-This project is licensed under the MIT License.
+MIT License
 
 👨‍💻 Author
 
 Nischal Bhandari
-GitHub: https://github.com/Nis6ha
+https://github.com/Nis6hal
