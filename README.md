@@ -1,22 +1,30 @@
-#Smart Gate Automation using License Plate Recognition
+# Smart Gate Automation using License Plate Recognition
 
-📖 Overview
+## 📖 Overview
+This project implements an automated gate control system that identifies vehicles using license plate recognition. It uses **YOLOv8** for detection and **OCR** for text extraction, then verifies the result against a whitelist. Authorized vehicles trigger automatic gate access.
 
-This project implements an automated gate control system that identifies vehicles using license plate recognition. It uses YOLOv8 for detection and OCR for text extraction, then verifies the result against a whitelist. Authorized vehicles trigger automatic gate access.
+---
 
-🚀 Key Features
-Real-time license plate detection using YOLOv8
-Text extraction with EasyOCR or Tesseract
-Whitelist-based authorization
-Automated gate control via GPIO/relay
-Modular and extensible design
-🛠️ Tech Stack
-Python
-YOLOv8 (Ultralytics)
-OpenCV
-EasyOCR / Tesseract
-GPIO / Relay modules
-📂 Project Structure
+## 🚀 Key Features
+- Real-time license plate detection using YOLOv8  
+- Text extraction with EasyOCR or Tesseract  
+- Whitelist-based authorization  
+- Automated gate control via GPIO/relay  
+- Modular and extensible design  
+
+---
+
+## 🛠️ Tech Stack
+- Python  
+- YOLOv8 (Ultralytics)  
+- OpenCV  
+- EasyOCR / Tesseract  
+- GPIO / Relay modules  
+
+---
+
+## 📂 Project Structure
+```text
 smart-gate-automation/
 │── models/           # YOLOv8 model weights
 │── src/
@@ -28,23 +36,40 @@ smart-gate-automation/
 │── whitelist.json    # Authorized vehicles
 │── requirements.txt
 └── README.md
-⚙️ Installation
+```
+
+---
+
+## ⚙️ Installation
+```bash
 git clone https://github.com/<your-username>/Smart-Gate-Automation-Using-License-Plate-Recognition.git
 cd Smart-Gate-Automation-Using-License-Plate-Recognition
 pip install -r requirements.txt
+```
 
 Download YOLOv8 weights:
-
+```bash
 yolo download yolov8n.pt
-▶️ Usage
+```
+
+---
+
+## ▶️ Usage
+```bash
 python src/main.py
-Workflow
-Capture video frame
-Detect license plate
-Extract text (OCR)
-Check whitelist
-Open gate if authorized
-📋 Whitelist Example
+```
+
+### Workflow
+1. Capture video frame  
+2. Detect license plate  
+3. Extract text (OCR)  
+4. Check whitelist  
+5. Open gate if authorized  
+
+---
+
+## 📋 Whitelist Example
+```json
 {
   "authorized_vehicles": [
     "BA1234",
@@ -52,20 +77,19 @@ Open gate if authorized
     "LU9012"
   ]
 }
-🔒 Security
-Keep whitelist protected
-Use encryption for remote systems
-Enable logging for audits
-🌱 Future Work
-Cloud-based whitelist
-Mobile app integration
-Multi-camera support
-Real-time alerts
-📜 License
+```
 
-MIT License
+---
 
-👨‍💻 Author
+## 🔒 Security
+- Keep whitelist protected  
+- Use encryption for remote systems  
+- Enable logging for audits  
 
-Nischal Bhandari
-https://github.com/Nis6hal
+---
+
+## 🌱 Future Work
+- Cloud-based whitelist  
+- Mobile app integration  
+- Multi-camera support  
+- Real-time alerts  
